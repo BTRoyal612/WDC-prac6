@@ -49,16 +49,30 @@ var vueinst = new Vue({
         show_ad: true,
         dark_mode: false,
         top_menu: [
-            { title:'Home',         url:'/' },
-            { title:'About',        url:'/about' },
-            { title:'Contact Us',   url:'/contact' },
+            { title:'Home', url:'/', submenus: [] },
+            { title:'About', url:'/about', 
+                submenus: [
+                    { title:'Who we are', url:'/about#us' },
+                    { title:'What we do', url:'/about#store' },
+                    { title:'Our range', url:'/about#range' }
+                ]
+            },
+            { title:'Contact Us',   url:'/contact', 
+                submenus: [
+                    { title:'Information', url:'/contact#info' },
+                    { title:'Returns', url:'/contact#return' },
+                    { title:'Locate Us', url:'/contact#locate' }
+                ]
+            },
         ],
         c_text: "type your comment here",
         c_arr: [],
+        top_menu_item: 0,
+        top_menu_hover: null,
     },
     methods: {
         add_comment: function(event) {
             this.c_arr.push(this.c_text);
-        }
+        },
     }
 }); 

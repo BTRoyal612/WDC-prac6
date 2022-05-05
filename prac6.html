@@ -24,13 +24,13 @@
         
             <header>
                 <h1>Wendy's Delicious Condiments (and Fruit)</h1>
-                <nav class="pure-menu pure-menu-horizontal">
-                    <ul id="topmenu" class="pure-menu-list" v-for="item in top_menu">
-                        <li class="pure-menu-item"><a v-bind:href="item.url" class="pure-menu-link">{{ item.title }}</a></li>
+                <nav class="pure-menu pure-menu-horizontal" v-on:mouseenter="top_menu_hover = true" v-on:mouseleave="top_menu_hover = false">
+                    <ul id="topmenu" class="pure-menu-list" v-for="(items, index) in top_menu">
+                        <li class="pure-menu-item"><a v-bind:href="items.url" v-on:mouseenter="top_menu_item = index" class="pure-menu-link">{{ items.title }}</a></li>
                     </ul>
-                    <div class="pure-menu">
-                        <ul id="submenu" class="pure-menu-list">
-
+                    <div class="pure-menu" v-if="top_menu_hover">
+                        <ul id="submenu" class="pure-menu-list" >
+                            <li class="pure-menu-item" v-for="item in top_menu[top_menu_item].submenus"><a v-bind:href="item.url" class="pure-menu-link">{{ item.title }}</a></li>
                         </ul>
                     </div>
                 </nav>
