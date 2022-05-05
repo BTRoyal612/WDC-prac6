@@ -55,9 +55,9 @@
                     <div id="comments"> 
                         <textarea rows="4" cols="60" class="pure-u-1" v-model="c_text">{{ c_text }}</textarea>
                         <button class="pure-button pure-u-1-4" v-on:click="add_comment">Add comment</button>
-                    </div>
-                    <div v-for="comment in c_arr">
-                        <p>{{ comment }}<br></p>
+                        <div v-for="comment in c_arr">
+                            <p>{{ comment }}<br></p>
+                        </div>
                     </div>
                 </div>
 
