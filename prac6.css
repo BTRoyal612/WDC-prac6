@@ -74,3 +74,7 @@ h1, h2, h3, h4, h5 {
     margin-right: 1em;
 }
        
+.dark-mode {
+    background-color: #333533;
+    color: #F5CB5C;
+}
